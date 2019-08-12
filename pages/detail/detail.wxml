@@ -1,0 +1,171 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail">
+  <!-- 头部 -->
+  <view class="subjectHeader">
+    <view class="imageBox">
+      <image class="image" src="{{listData.images.small}}"></image>
+    </view>
+
+    <view class="titleBox">
+      <view class="copyTitle">{{title}}</view>
+      <view wx:if="{{isTitle}}" class="originalTitle">{{original_title}}</view>
+      <view class="genres">{{movieInfo}}</view>
+      <view class="stateBox">
+        <view class="seeing">
+          <image class="icon" src="/images/icon_想看.png"></image>
+          <view class="seeIn">{{state.before}}</view>
+        </view>
+        <view wx:if="{{false}}" class="see">
+          <image class="icon" src="/images/icon_在看.png"></image>
+          <view class="seeIn">{{state.now}}</view>
+        </view>
+        <view class="seen">
+          <image class="icon" src="/images/icon_看过.png"></image>
+          <view class="seeIn">{{state.after}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 豆瓣评分 -->
+  <view class="subjectRating" bindtap="commentsUrl">
+    <view class="rateHeader">
+      <view class="rateFont">
+        <!-- 这小程序真是垃圾 转义都没几个可以用的 -->
+        <text decode="true">豆瓣评分</text>
+      </view>
+      <view class="rateFont">
+        <text decode="true"> &gt;</text>
+      </view>
+    </view>
+    <view class="rateComb">
+      <view class="rateNumber">
+        <view wx:if="{{listData.rating.average}}" class="rateText">{{listData.rating.average}}</view>
+        <starBar1 rate="{{listData.rating.average}}"></starBar1>
+      </view>
+      <starProgress rating="{{listData.rating}}" ratings_count="{{listData.ratings_count}}" style="width: 280rpx;"></starProgress>
+    </view>
+  </view>
+  <!-- 简介 -->
+  <view class="subjectSummary">
+    <view class="title">简介</view>
+    <view class="content {{isShow ? 'on' : ''}}">
+      {{listData.summary}}
+    </view>
+    <view class="toggle" bindtap="isSummaryToggle">{{iconText}}</view>
+  </view>
+  <!-- 影人 -->
+  <view class="title" style="padding: 0rpx 25rpx;">影人</view>
+  <scroll-view class="subjectCasts" scroll-x>
+    <!-- 导演 -->
+    <!-- <subjectCasts class="scroll-view-item" wx:for="{{subjectsData}}" wx:key="{{index}}" singleData="{{item}}" singleMethod="{{subjectsMethod}}" singlePosition="导演"></subjectCasts> -->
+    <!-- 演员 -->
+    <!-- <subjectCasts class="scroll-view-item" wx:for="{{subjectsData}}" wx:key="{{index}}" singleData="{{item}}" singleMethod="{{subjectsMethod}}" singlePosition="演员"></subjectCasts> -->
+    <!-- 导演 -->
+    <view wx:for="{{listData.directors}}" wx:key="index" class="subjectBar scroll-view-item">
+      <view class="subjectImageGroup">
+        <image class="subjectImage" src="{{item.avatars.small}}"></image>
+      </view>
+      <view class="subjectTitle">{{item.name}}</view>
+      <view class="subjectPosition">导演</view>
+    </view>
+    <!-- 演员 -->
+    <view wx:for="{{listData.casts}}" wx:key="index" class="subjectBar scroll-view-item">
+      <view class="subjectImageGroup">
+        <image class="subjectImage" src="{{item.avatars.small}}"></image>
+      </view>
+      <view class="subjectTitle">{{item.name}}</view>
+      <view class="subjectPosition">演员</view>
+    </view>
+
+  </scroll-view>
+  <!-- 预告片/剧照 -->
+  <view class="subjectPhotos">
+    <view class="boxHeader">
+      <view class="title">预告片/剧照</view>
+      <view class="photosNum" bindtap="photosUrl">
+        <text decode="true">全部 {{listData.photos_count}} &gt;</text>
+      </view>
+    </view>
+
+    <scroll-view class="scrollBox" scroll-x>
+      <!-- 花絮 -->
+      <view wx:if="{{listData.bloopers.length}}" class="scroll-view-item">
+        <video class="subjectVideo" src="{{listData.bloopers[0].resource_url}}" poster="{{listData.bloopers[0].medium}}" title="{{listData.bloopers[0].title}}" direction="90" style="height:{{scrollHeight}}rpx;width:{{videoWidth}}rpx;"></video>
+      </view>
+      <!-- <view wx:if="{{listData.bloopers.length}}" class="scroll-view-item">
+        <image class="subjectVideo" src="{{listData.bloopers[0].medium}}" style="height:{{scrollHeight}}rpx;width:{{videoWidth}}rpx;"></image>
+      </view> -->
+      <!-- 剧照 -->
+      <view wx:for="{{listData.photos}}" wx:key="index" class="scroll-view-item">
+        <image class="subjectImage" src="{{item.image}}" style="height:{{scrollHeight}}rpx;width:{{imagesWidth}}rpx;"></image>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 短评 -->
+  <view class="subjectComments">
+    <view class="boxHeader">
+      <view class="title">短评</view>
+      <view class="photosNum" bindtap="commentsUrl">
+        <text decode="true">全部 {{listData.comments_count}} &gt;</text>
+      </view>
+    </view>
+    <view wx:for="{{listData.popular_comments}}" wx:key="index" class="boxContainer">
+      <view class="boxAuthor">
+        <image class="userAvatar" src="{{item.author.avatar}}"></image>
+        <view class="userComments">
+          <view class="userName">{{item.author.name}}</view>
+          <view class="userRating">
+            <starBar1 rate="{{item.rating.value * 2}}"></starBar1>
+            <view class="createdAt">{{item.created_at}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="boxBody">
+        <view class="content {{item.isShow ? 'on' : ''}}" bindtap="isCommentsToggle" data-index="{{index}}">
+          {{item.content}}
+        </view>
+        <view class="usefulBox">
+          <image class="usefulImage" src="/images/icon_赞.png"></image>
+          <view class="usefulCount">{{item.useful_count}}</view>
+        </view>
+        <view class="boxLine"></view>
+      </view>
+    </view>
+    <view class="boxHeader" bindtap="commentsUrl">
+      <view class="title" style="font-size: 30rpx;">查看全部评论</view>
+      <view class="photosNum">
+        <text decode="true">&gt;</text>
+      </view>
+    </view>
+  </view>
+  <!-- 影评 -->
+  <view class="subjectReviews">
+    <view class="title" style="padding-left: 25rpx;">
+      影评
+      <text class="photosNum"> {{listData.reviews_count}}条</text>
+    </view>
+
+    <view wx:for="{{listReviews}}" wx:key="index" class="reviewsContainer" bindtap="reviewsUrl" data-index="{{index}}">
+      <view class="userHeader">
+        <image class="userAvatar" src="{{item.author.avatar}}"></image>
+        <view class="userName">{{item.author.name}}</view>
+        <view class="userRate">
+          <starBar1 rate="{{item.rating.value * 2}}"></starBar1>
+        </view>
+      </view>
+
+      <view class="reviewsTitle">{{item.title}}</view>
+      <view class="reviewsContent">{{item.summary}}</view>
+
+      <text class="otherNum">{{item.comments_count}}回复 . {{item.useful_count}}有用 . {{item.useless_count}}没用</text>
+    </view>
+
+    <view class="loading" hidden="{{!loadingComplete}}">
+      <view>——— 我们是有底线的 ———</view>
+    </view>
+  </view>
+
+
+
+</view>

@@ -1,0 +1,407 @@
+/* pages/detail/detail.wxss */
+
+/* 头部 */
+
+.detail {
+  background-color: #f9f5f4;
+}
+
+.subjectHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 25rpx 25rpx 0rpx 25rpx;
+}
+
+.imageBox {
+  width: 220rpx;
+  height: 320rpx;
+  padding-top: 10rpx;
+  box-sizing: border-box;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.titleBox {
+  margin-left: 20rpx;
+  width: 460rpx;
+  height: 320rpx;
+}
+
+.copyTitle {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #191919;
+  text-align: left;
+}
+
+.originalTitle {
+  font-size: 28rpx;
+  color: #818181;
+  text-align: left;
+}
+
+.genres {
+  margin: 10rpx 0rpx 30rpx 0rpx;
+  font-size: 20rpx;
+  color: #818181;
+  text-align: left;
+}
+
+.stateBox {
+  display: flex;
+  justify-content: space-around;
+}
+
+.seeing, .see, .seen {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 8rpx;
+  padding: 10rpx;
+  background-color: #ffff;
+  border-radius: 8rpx;
+  flex-grow: 1;
+}
+
+.seeIn {
+  color: #4c4c4c;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.icon {
+  margin: 4rpx 4rpx 0rpx 0rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/* 豆瓣评分 */
+
+.subjectRating {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10rpx;
+  background-color: #ffff;
+  margin: 30rpx 25rpx;
+}
+
+.rateHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 16rpx 0rpx 16rpx;
+  width: 100%;
+}
+
+.rateFont {
+  color: #000;
+  font-weight: bold;
+  font-size: 24rpx;
+}
+
+.rateComb {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 20rpx 16rpx 30rpx 16rpx;
+}
+
+.rateComb .rateNumber {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-right: 10%;
+  width: 120rpx;
+}
+
+.rateNumber .rateText {
+  font-size: 46rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+/* 简介 */
+
+.subjectSummary {
+  padding: 30rpx 25rpx;
+}
+
+.title {
+  color: #191919;
+  line-height: 80rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.subjectSummary .content {
+  line-height: 50rpx;
+  color: #191919;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.subjectSummary .on {
+  display: block;
+  overflow: visible;
+}
+
+.subjectSummary .toggle {
+  width: 100%;
+  text-align: right;
+  color: #c0c0c0;
+  font-size: 28rpx;
+}
+
+/* 影人 */
+
+.subjectCasts {
+  width: 100%;
+  height: 320rpx;
+  white-space: nowrap;
+}
+
+.subjectCasts .scroll-view-item {
+  margin-right: 18rpx;
+  display: inline-block;
+}
+
+.subjectCasts .scroll-view-item:last-of-type {
+  margin-right: 25rpx;
+}
+
+.subjectCasts .scroll-view-item:first-of-type {
+  margin-left: 25rpx;
+}
+
+/* 预告片/剧照  */
+
+.subjectPhotos {
+  padding: 30rpx 0rpx;
+}
+
+.boxHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 25rpx;
+}
+
+.photosNum {
+  color: #818181;
+  font-size: 26rpx;
+  font-weight: 20;
+  line-height: 80rpx;
+}
+
+.scrollBox {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.scrollBox .scroll-view-item {
+  margin-right: 10rpx;
+  display: inline-block;
+}
+
+.scrollBox .scroll-view-item:first-of-type {
+  margin-left: 25rpx;
+}
+
+.scrollBox .scroll-view-item:last-of-type {
+  margin-left: 0rpx;
+}
+
+/* 短评 */
+
+.subjectComments {
+  border-radius: 10rpx;
+  background-color: #ffff;
+  margin: 30rpx 25rpx;
+}
+
+.boxContainer {
+  margin-top: 20rpx;
+}
+
+.boxAuthor {
+  display: flex;
+  justify-content: start;
+  padding: 0rpx 25rpx;
+}
+
+.userAvatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.userComments {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 10rpx;
+}
+
+.userName {
+  color: #191919;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.userRating {
+  display: flex;
+  justify-content: start;
+}
+
+.createdAt {
+  color: #818181;
+  font-size: 20rpx;
+  margin-left: 6px;
+}
+
+.boxBody {
+  padding: 20rpx 25rpx 0rpx 25rpx;
+}
+
+.boxBody .content {
+  color: #191919;
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.boxBody .on {
+  display: block;
+  overflow: visible;
+}
+
+.usefulBox {
+  display: flex;
+  justify-content: start;
+  padding: 20rpx 0rpx;
+}
+
+.usefulImage {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.usefulCount {
+  color: #818181;
+  font-size: 26rpx;
+  font-weight: 24;
+  margin-left: 8rpx;
+}
+
+.boxLine {
+  background: #f4f4f4;
+  width: 100%;
+  height: 2rpx;
+}
+
+/* 影评 */
+
+.subjectReviews {
+  padding: 25rpx 0rpx;
+}
+
+.reviewsContainer {
+  background-color: #ffff;
+  padding: 25rpx 25rpx;
+  margin-bottom: 15rpx;
+}
+
+.userHeader {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.userHeader .userAvatar {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.userHeader .userName {
+  color: #818181;
+  font-size: 20rpx;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+}
+
+.reviewsTitle {
+  color: #191919;
+  font-weight: bold;
+  font-size: 34rpx;
+  margin: 15rpx 0rpx;
+}
+
+.reviewsContent {
+  color: #191919;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.otherNum {
+  color: #818181;
+  font-size: 26rpx;
+  font-weight: 20;
+}
+
+.loading {
+  display: flex;
+  justify-content:center;
+  font-size:22rpx;
+  color:#bbb;
+}
+
+/* l */
+
+.subjectBar {
+  width: 170rpx;
+  height: 340rpx;
+}
+
+.subjectImageGroup {
+  width: 100%;
+  height: 240rpx;
+}
+
+.subjectImageGroup .subjectImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+
+.subjectTitle {
+  margin: 8rpx 0rpx 4rpx 0rpx;
+  color: #191919;
+  font-size: 26rpx;
+  white-space: nowrap;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.subjectPosition {
+  font-size: 20rpx;
+  color: #818181;
+}

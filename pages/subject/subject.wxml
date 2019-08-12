@@ -1,0 +1,9 @@
+<!--pages/subject/subject.wxml-->
+<view class="subjectList">
+    <subjectBar class="viewList" wx:for="{{subjectsData}}" wx:key="{{index}}" 
+    singleData="{{item}}" singleMethod="{{subjectsMethod}}"></subjectBar>
+</view>
+<view class="loading" hidden="{{!loadingComplete}}">
+  <view>——— 我们是有底线的 ———</view>
+</view>
+

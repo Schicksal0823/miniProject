@@ -1,0 +1,9 @@
+<!--pages/search/search.wxml-->
+<searchBar></searchBar>
+<view class="historyGroup">
+  <view class="historyTitle">
+    <!-- <view>历史记录</view>
+    <view>清除</view> -->
+  </view>
+  <navigator class="historyNavigator"></navigator>
+</view>

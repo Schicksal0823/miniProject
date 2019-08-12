@@ -1,0 +1,19 @@
+/* components/starBar1/starBar1.wxss */
+.starBar1 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 20rpx;
+  color: #818181;
+}
+
+.starBar1 image{
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.starText {
+  text-align: center;
+  font-size: 20rpx;
+  color: #818181;
+}

@@ -1,0 +1,23 @@
+/* pages/photos/photos.wxss */
+.photosList {
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+}
+
+.viewList {
+  padding-bottom: 5rpx;
+}
+
+.photosList:after {
+  content: '';
+  width: 246rpx;
+}
+
+.loading {
+  display: flex;
+  justify-content:center;
+  font-size:22rpx;
+  color:#bbb;
+  align-items: flex-end;
+}

@@ -1,0 +1,9 @@
+<!--components/subjectBar/subjectBar.wxml-->
+<view class="subjectBar" bindtap="subjectUrl">
+  <view class="subjectImageGroup">
+    <image class="subjectImage" src="{{singleShow.images.small}}"></image>
+  </view>
+  <view class="subjectTitle">{{singleShow.title}}</view>
+  
+  <starBar class="subjectRate" rate="{{singleShow.rating.average}}" ></starBar>
+</view>

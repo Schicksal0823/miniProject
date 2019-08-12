@@ -1,0 +1,7 @@
+{
+  "onReachBottomDistance": 200,
+  "usingComponents": {
+    "starBar1": "/components/starBar1/starBar1",
+    "starProgress": "/components/starProgress/starProgress"
+  }
+}

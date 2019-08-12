@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "starBar1": "/components/starBar1/starBar1"
+  }
+}

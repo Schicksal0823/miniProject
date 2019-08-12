@@ -1,0 +1,10 @@
+<!--pages/home/home.wxml-->
+<searchBar isNavigator="{{true}}"></searchBar>
+<categoryBar wx:for="{{moduleData}}" wx:key="{{index}}" titleCategory="{{item.thisTitle}}" moreCategory="{{item.thisUrl}}" dataCategory="{{item.thisData}}" methodCategory="{{item.thisMethod}}"></categoryBar>
+
+<!-- <categoryBar titleCategory="影院热映" dataCategory="{{true}}"></categoryBar>
+<categoryBar titleCategory="豆瓣热门" dataCategory="{{true}}"></categoryBar>
+<categoryBar titleCategory="近期热门剧集" dataCategory="{{true}}"></categoryBar>
+<categoryBar titleCategory="近期热门综艺节目" dataCategory="{{true}}"></categoryBar>
+<categoryBar titleCategory="畅销图书" dataCategory="{{true}}"></categoryBar>
+<categoryBar titleCategory="热门单曲榜" dataCategory="{{true}}"></categoryBar> -->

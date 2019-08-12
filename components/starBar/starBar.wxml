@@ -1,0 +1,8 @@
+<!--components/starBar/starBar.wxml-->
+<view class="starBar">
+  <image wx:for="{{starLight}}" wx:key="{{index}}" src="/images/icon_金星.png"></image>
+  <image wx:for="{{starHalf}}" wx:key="{{index}}" src="/images/icon_半星.png"></image>
+  <image wx:for="{{starGrey}}" wx:key="{{index}}" src="/images/icon_灰星.png"></image>
+  <text>{{rateText}}</text>
+</view>
+

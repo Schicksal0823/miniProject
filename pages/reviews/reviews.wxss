@@ -1,0 +1,88 @@
+/* pages/reviews/reviews.wxss */
+.reviews {
+  padding: 30rpx 25rpx 0rpx 25rpx;
+}
+
+.reviewsTitle {
+  color: #191919;
+  font-size: 46rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+
+.content {
+  font-size: 38rpx;
+  line-height: 50rpx;
+}
+
+.boxAuthor {
+  display: flex;
+  justify-content: start;
+  padding: 25rpx 0rpx 50rpx 0rpx ;
+}
+
+.userAvatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.userComments {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-left: 10rpx;
+}
+
+.userName {
+  color: #191919;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.userRating {
+  display: flex;
+  justify-content: start;
+}
+
+.createdAt {
+  color: #818181;
+  font-size: 20rpx;
+}
+
+.boxLine {
+  background: #ebebeb;
+  width: 20%;
+  height: 2rpx;
+  margin: 40rpx 0rpx 20rpx 0rpx;
+}
+
+.copyright {
+    color: #aaaaaa;
+    font-size: 26rpx;
+}
+
+.panelUseful {
+  display: flex;
+  justify-content: center;
+  padding: 50rpx 0rpx;
+}
+
+.leftBroder {
+  border-radius: 25rpx 0rpx 0rpx 25rpx;
+}
+
+.rightBroder {
+  border-radius: 0rpx 25rpx 25rpx 0rpx;
+}
+
+.useful_count,.useless_count {
+  border:2rpx solid #ededed;
+  color: #818181;
+  font-size: 20rpx;
+  font-weight: bold;
+  width: 160rpx;
+  line-height: 50rpx;
+  text-align: center;
+}

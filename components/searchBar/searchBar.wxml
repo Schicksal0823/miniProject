@@ -1,0 +1,7 @@
+<view class="searchBar">
+  <navigator wx:if="{{isNavigator}}" class="searchNavigator" url="/pages/search/search"></navigator>
+  <view wx:else class="searchInputGroup">
+    <view class="searchImage"></view>
+    <input class="searchInput" placeholder="搜索" placeholder-class="searchPlaceholder"></input>
+  </view>
+</view>

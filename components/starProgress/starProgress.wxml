@@ -1,0 +1,37 @@
+<!--components/starProgress/starProgress.wxml-->
+<view class="rateBox">
+  <!-- <view class="rateNumber">
+    <view wx:if="{{rate.average}}" class="rateText">{{rate.average}}</view>
+    <starBar1 rate="{{rate.average}}"></starBar1>
+  </view> -->
+  <view class="rateProgress progressText" style="font-size: {{fontSize}}rpx;">
+    <view class="progressBox">
+      <text class="leftText">5星</text>
+      <progress class="progress" percent="{{star5}}" backgroundColor="#f5f5f5" activeColor="#ffac2b" stroke-width="{{stroke_width}}" border-radius="2" active></progress>
+      <text wx:if="{{isShow}}" class="rightText">{{star5}}%</text>
+    </view>
+    <view class="progressBox">
+      <text class="leftText">4星</text>
+      <progress class="progress" percent="{{star4}}" backgroundColor="#f5f5f5" activeColor="#ffac2b" stroke-width="{{stroke_width}}" border-radius="2" active></progress>
+      <text wx:if="{{isShow}}" class="rightText">{{star4}}%</text>
+    </view>
+    <view class="progressBox">
+      <text class="leftText">3星</text>
+      <progress class="progress" percent="{{star3}}" backgroundColor="#f5f5f5" activeColor="#ffac2b" stroke-width="{{stroke_width}}" border-radius="2" active></progress>
+      <text wx:if="{{isShow}}" class="rightText">{{star3}}%</text>
+    </view>
+    <view class="progressBox">
+      <text class="leftText">2星</text>
+      <progress class="progress" percent="{{star2}}" backgroundColor="#f5f5f5" activeColor="#ffac2b" stroke-width="{{stroke_width}}" border-radius="2" active></progress>
+      <text wx:if="{{isShow}}" class="rightText">{{star2}}%</text>
+    </view>
+    <view class="progressBox">
+      <text class="leftText">1星</text>
+      <progress class="progress" percent="{{star1}}" backgroundColor="#f5f5f5" activeColor="#ffac2b" stroke-width="{{stroke_width}}" border-radius="2" active></progress>
+      <text wx:if="{{isShow}}" class="rightText">{{star1}}%</text>
+    </view>
+    <view class="ratePerson progress" >
+      <text wx:if="{{rate.average}}">{{rate_count}}人评分</text>
+    </view>
+  </view>
+</view>

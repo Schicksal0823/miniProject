@@ -1,0 +1,41 @@
+/* components/categoryBar/categoryBar.wxss */
+.categoryBar {
+  padding: 30rpx 0rpx;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+  padding: 0rpx 25rpx;
+}
+
+.categoryHeader .categoryTitle {
+  color: #494949;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.categoryHeader .categoryMore {
+  color: #05b512;
+  font-size: 30rpx;
+}
+
+.categoryScroll {
+  width: 100%;
+  height: 320rpx;
+  white-space: nowrap;
+}
+
+.categoryScroll .scroll-view-item {
+  margin-right: 18rpx;
+  display: inline-block;
+}
+
+.categoryScroll .scroll-view-item:last-of-type {
+  margin-right: 25rpx;
+}
+
+.categoryScroll .scroll-view-item:first-of-type {
+  margin-left: 25rpx;
+}

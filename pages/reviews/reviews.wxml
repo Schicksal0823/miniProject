@@ -1,0 +1,22 @@
+<!--pages/reviews/reviews.wxml-->
+<view class="reviews">
+  <view class="reviewsTitle">{{listReviews.title}}</view>
+  <view class="boxAuthor">
+    <image class="userAvatar" src="{{listReviews.author.avatar}}"></image>
+    <view class="userComments">
+      <view class="userName">{{listReviews.author.name}}</view>
+      <view class="userRating">
+        <view class="createdAt">{{listReviews.created_at}}</view>
+        <starBar1 rate="{{listReviews.rating.value * 2}}" style="margin-left: 8px;"></starBar1>
+      </view>
+    </view>
+  </view>
+  <rich-text class="content" nodes="{{article_content}}"></rich-text>
+  <view class="boxLine"></view>
+  <text class="copyright" decode="true">©&nbsp;本文版权归作者&nbsp;{{listReviews.author.name}}&nbsp;所有，任何形式转载请联系作者。
+  </text>
+  <view class="panelUseful">
+    <view class="useful_count leftBroder">{{listReviews.useful_count}} 有用</view>
+    <view class="useless_count rightBroder">{{listReviews.useless_count}} 没用</view>
+  </view>
+</view>

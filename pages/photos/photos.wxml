@@ -1,0 +1,7 @@
+<!--pages/photos/photos.wxml-->
+<view class="photosList">
+    <image class="viewList" wx:for="{{listPhotos}}" wx:key="index" src="{{item.cover}}" style="height:{{imagesHeight}}rpx;width:{{imagesWidth}}rpx;"></image>
+</view>
+<view class="loading" hidden="{{!loadingComplete}}">
+  <view>——— 我们是有底线的 ———</view>
+</view>

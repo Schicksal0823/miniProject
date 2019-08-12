@@ -1,0 +1,58 @@
+<!--pages/comments/comments.wxml-->
+<view class="comments">
+  <view class="rateHeader">
+    <text decode="true">豆瓣评分</text>
+  </view>
+
+  <view class="rateComb">
+    <view class="rateNumber">
+      <text wx:if="{{rate.average}}" class="rateText">{{rate.average}}</text>
+      <starBar1 rate="{{rate.average}}" starText="24"></starBar1>
+    </view>
+    <starProgress rating="{{rate}}" ratings_count="{{options.ratings_count}}" progressWidth="7" style="width: 75%;" progresText="16" progresBool="true"></starProgress>
+  </view>
+
+  <view class="rateFooter">
+    <view class="lastText">好于 89% 的动画片</view>
+    <view class="lastText">好于 97% 的喜剧片</view>
+  </view>
+  <view class="boxLine"></view>
+  <!-- 短评 -->
+  <view class="subjectComments">
+    <view class="boxHeader">
+      <view class="title">
+        短评
+        <text class="photosNum"> {{options.comments_count}}条</text>
+      </view>
+      <view class="photosNum">
+        <!-- <picker bindchange="pickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker> -->
+      </view>
+    </view>
+    <view wx:for="{{listComments}}" wx:key="index" class="boxContainer">
+      <view class="boxAuthor">
+        <image class="userAvatar" src="{{item.author.avatar}}"></image>
+        <view class="userComments">
+          <view class="userName">{{item.author.name}}</view>
+          <view class="userRating">
+            <starBar1 rate="{{item.rating.value * 2}}"></starBar1>
+            <view class="createdAt">{{item.created_at}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="boxBody">
+        <view class="content {{item.isShow ? 'on' : ''}}" bindtap="isCommentsToggle" data-index="{{index}}">
+          {{item.content}}
+        </view>
+        <view class="usefulBox">
+          <image class="usefulImage" src="/images/icon_赞.png"></image>
+          <view class="usefulCount">{{item.useful_count}}</view>
+        </view>
+        <view class="boxLine"></view>
+      </view>
+    </view>
+  </view>
+</view>

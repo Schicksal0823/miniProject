@@ -1,0 +1,15 @@
+<!--components/categoryBar/categoryBar.wxml-->
+<view class="categoryBar">
+  <view class="categoryHeader">
+    <view class="categoryTitle">{{headerTitle}}</view>
+    <navigator url="{{headerMore}} ">
+    <!-- url="{{headerMore}}"  bindtap="moreUrl" data-psd="{{headerMore}}-->
+      <text class="categoryMore" decode="true">查看更多 &gt;</text>
+    </navigator>
+  </view>
+  <scroll-view class="categoryScroll" scroll-x>
+    <subjectBar class="scroll-view-item" wx:for="{{subjectsData}}" wx:key="{{index}}" 
+    singleData="{{item}}" singleMethod="{{subjectsMethod}}"></subjectBar>
+    <!-- imageUrl="{{item.images.small}}" titleText="{{item.title}}" rateNum="{{item.rating.average}}"  -->
+  </scroll-view>
+</view>

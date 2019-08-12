@@ -1,0 +1,6 @@
+{
+  "onReachBottomDistance":200,
+  "usingComponents": {
+    "subjectBar": "/components/subjectBar/subjectBar"
+  }
+}
