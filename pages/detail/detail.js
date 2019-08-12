@@ -14,7 +14,7 @@ Page({
     original_title: "",
     movieInfo: "",
     isTitle: true,
-
+    listImages:[],
     listReviews: [],
     loadingComplete: false,
     start: 0,
@@ -94,6 +94,17 @@ Page({
       url: `/pages/reviews/reviews?title=${this.data.listData.title}&id=${this.data.options.id}&index=${e.currentTarget.dataset.index}`
     });
   },
+  previewImage: function (event) {
+    //获取data-src
+    let src = event.currentTarget.dataset.src;
+    //获取data-list
+    let imgList = event.currentTarget.dataset.list;
+    //图片预览
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: imgList // 需要预览的图片http链接列表
+    });
+  },
   updataList: function(options, show = true) {
     let url = `/${options.method}/subject/${options.id}`;
     let data = {};
@@ -124,12 +135,20 @@ Page({
         comments[i].isShow = false;
       }
 
+      // 图片列表
+      let photos = res.data.photos;
+      let listImages = [];
+      for (var i in photos) {
+        listImages.push(photos[i].image);
+      }
+
       this.setData({
         listData: res.data,
         title: title,
         original_title: original_title,
         movieInfo: movieInfo,
-        isTitle: isTitle
+        isTitle: isTitle,
+        listImages: listImages
       });
     }).catch((error) => {
       wx.showToast({

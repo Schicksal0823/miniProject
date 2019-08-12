@@ -1,0 +1,56 @@
+<!--pages/detail1/detail1.wxml-->
+<view class="detail1">
+  <!-- 头部 -->
+  <view class="subjectHeader">
+    <view class="imageBox">
+      <image class="image" src="{{listData.images.small}}"></image>
+    </view>
+
+    <view class="titleBox">
+      <view class="copyTitle">{{title}}</view>
+      <view wx:if="{{isTitle}}" class="originalTitle">{{original_title}}</view>
+      <view class="genres">{{movieInfo}}</view>
+      <view class="stateBox">
+        <view class="seeing">
+          <image class="icon" src="/images/icon_想看.png"></image>
+          <view class="seeIn">{{state.before}}</view>
+        </view>
+        <view class="see">
+          <image class="icon" src="/images/icon_在看.png"></image>
+          <view class="seeIn">{{state.now}}</view>
+        </view>
+        <view class="seen">
+          <image class="icon" src="/images/icon_看过.png"></image>
+          <view class="seeIn">{{state.after}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 豆瓣评分 -->
+  <view class="subjectRating" bindtap="commentsUrl">
+    <view class="rateHeader">
+      <view class="rateFont">
+        <!-- 这小程序真是垃圾 转义都没几个可以用的 -->
+        <text decode="true">豆瓣评分</text>
+      </view>
+      <view class="rateFont">
+        <text decode="true"> &gt;</text>
+      </view>
+    </view>
+    <view class="rateComb">
+      <view class="rateNumber">
+        <view wx:if="{{listData.rating.average}}" class="rateText">{{listData.rating.average}}</view>
+        <starBar1 rate="{{listData.rating.average}}"></starBar1>
+      </view>
+      <starProgress rating="{{listData.rating}}" ratings_count="{{listData.ratings_count}}" style="width: 280rpx;"></starProgress>
+    </view>
+  </view>
+  <!-- 简介 -->
+  <view class="subjectSummary">
+    <view class="title">简介</view>
+    <view class="content {{isShow ? 'on' : ''}}">
+      {{listData.summary}}
+    </view>
+    <view class="toggle" bindtap="isSummaryToggle">{{iconText}}</view>
+  </view>
+</view>

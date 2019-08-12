@@ -3,9 +3,11 @@
     "pages/home/home",
     "pages/list/list",
     "pages/index/index",
+    "pages/logs/logs",
     "pages/search/search",
     "pages/subject/subject",
     "pages/detail/detail",
+    "pages/detail1/detail1",
     "pages/comments/comments",
     "pages/reviews/reviews",
     "pages/photos/photos"

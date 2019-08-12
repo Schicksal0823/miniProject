@@ -97,7 +97,7 @@
       </view> -->
       <!-- 剧照 -->
       <view wx:for="{{listData.photos}}" wx:key="index" class="scroll-view-item">
-        <image class="subjectImage" src="{{item.image}}" style="height:{{scrollHeight}}rpx;width:{{imagesWidth}}rpx;"></image>
+        <image class="subjectImage" src="{{item.image}}" bindtap="previewImage" data-list="{{listImages}}" data-src="{{item.image}}"style="height:{{scrollHeight}}rpx;width:{{imagesWidth}}rpx;"></image>
       </view>
     </scroll-view>
   </view>
